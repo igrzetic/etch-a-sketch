@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
     <title>Etch a Sketch</title>
 </head>
 <body>
+    <div class="flex-container">
+        <div class="title"><h1>Etch A Sketch</h1></div>
+        <div class="content">
+            <div class="board"></div>
+            <div class="buttons">
+                <button id="colorBtn">Color mode</button>
+                <button id="rainbowBtn" onclick="changeColor('random')">Rainbow mode</button>
+                <button id="eraserBtn">Eraser</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+            <div>
+                <input 
+                    type="number" 
+                    placeholder="Size of board" 
+                    value="16" 
+                    onchange="(this.value)"
+                >
+                <button id="sizeBtn">Set Size</button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
