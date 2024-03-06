@@ -1,6 +1,3 @@
-let color = "black";
-let click = true;
-
 function populateBoard(size) {
   let board = document.querySelector(".board");
   let squares = board.querySelectorAll("div");
@@ -18,22 +15,32 @@ function populateBoard(size) {
 
 populateBoard(16);
 
-function changeSize(input) {
-  if (input >= 2 && input <= 100) {
+const sizeBtn = document.getElementById('sizeBtn');
+sizeBtn.addEventListener('click', function() {
+    let newSize = document.querySelector('.input').value;
+    changeSize(newSize)
+    console.log("new size: " + newSize);
+});
+
+function changeSize(newSize) {
+  if (newSize >= 2 && newSize <= 100) {
     document.querySelector(".error").style.display = "none";
-    populateBoard(input);
+    populateBoard(newSize);
   } else {
     document.querySelector(".error").style.display = "flex";
   }
 }
 
+// FUNKCIJA KOJA MI BOJA DIV
+let color = "black";
+
 function colorSquare() {
   if (click) {
-    if (color === "random") {
-      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
+    // if (color === "random") {
+    //   this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    // } else {
       this.style.backgroundColor = color;
-    }
+    // }
   }
 }
 
@@ -46,6 +53,9 @@ function colorSquare() {
 //   let squares = board.querySelectorAll("div");
 //   squares.forEach((div) => (div.style.backgroundColor = "white"));
 // }
+
+// FUNKCIJA KADA KLIKNEM NA BODY DA MI PRESTANE CRTATI
+let click = true;
 
 document.querySelector("body").addEventListener("click", (e) => {
   if (e.target.tagName != "BUTTON") {
