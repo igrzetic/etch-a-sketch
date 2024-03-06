@@ -22,11 +22,15 @@ body {
     margin: 25px auto;
     border-radius: 20px;
     border: 15px solid #c81010ec;
-    background-color: #f5f5f5;
+    background-color: white;
 }
 
 .title {
-    padding: 30px;
+    padding: 5px;
+}
+
+.mode {
+    color: #404040;
 }
 
 h1 {

@@ -10,13 +10,14 @@
 <body>
     <div class="flex-container">
         <div class="title"><h1>Etch A Sketch</h1></div>
+        <div class="mode">Mode: Coloring</div>
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
-                <button id="colorBtn">Color mode</button>
-                <button id="rainbowBtn" onclick="changeColor('random')">Rainbow mode</button>
+                <button id="colorBtn" onclick="changeColor('black')">Color mode</button>
+                <button id="rainbowBtn" onclick="changeColor('rainbow')">Rainbow mode</button>
                 <button id="eraserBtn" onclick="changeColor('white')">Eraser</button>
-                <button id="clearBtn">Clear</button>
+                <button onclick="clearBoard()">Clear</button>
             </div>
             <div>
                 <input class="input"
@@ -26,7 +27,7 @@
                     onclick="(this.value)"
                 >
                 <button id="sizeBtn">Set Size</button>
-                <div class="error" style="display: none;">Input must be between 2 and 100</div>
+                <div class="error" style="display: none; color: #404040;">Input must be between 2 and 100</div>
             </div>
         </div>
     </div>
