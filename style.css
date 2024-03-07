@@ -110,13 +110,13 @@ input:focus {
 }
 
 .dark-mode button {
-    background-color: #00CCCC;
-    color: white;
-    box-shadow: 3px 3px 1px #00a0a0
+    background-color: #FFCC00;
+    color: #333;
+    box-shadow: 3px 3px 1px #cba300
 }
 
 .dark-mode button:hover {
-    background-color: #d80157;
+    background-color: #ddb100;
     box-shadow: 0 0 7.5px #404040;
 }
 
