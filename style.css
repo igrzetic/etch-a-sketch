@@ -8,15 +8,15 @@ body {
 
 .flex-container {
     background-color: #e51111ec;
-    margin: 7% 5%;
+    margin: 5% 25%;
     padding: 5px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .board {
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     display: grid;
     box-shadow: inset 0 0 7.5px rgba(0, 0, 0, 0.5);
     margin: 25px auto;
@@ -29,8 +29,16 @@ body {
     padding: 5px;
 }
 
-.mode {
-    color: #404040;
+.mode, .error {
+    color: white;
+}
+
+#darkMode {
+    margin: 3px;
+}
+
+label {
+    color: white;
 }
 
 h1 {
@@ -87,3 +95,62 @@ input {
 input:focus {
     outline: none;
 }
+
+/* DARK MODE */
+
+.dark-mode h1 {
+    color: #FF0066;
+    text-shadow: 0 0 10px #ce1b62;
+}
+
+.dark-mode input {
+    background-color: #e7e7e7;
+    border: 3px solid #303030;
+    box-sizing: inset 0 0 7.5px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode button {
+    background-color: #00CCCC;
+    color: white;
+    box-shadow: 3px 3px 1px #00a0a0
+}
+
+.dark-mode button:hover {
+    background-color: #d80157;
+    box-shadow: 0 0 7.5px #404040;
+}
+
+.dark-mode .board {
+    border: 15px solid #303030;
+}
+
+.dark-mode .flex-container {
+    background-color: #404040;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+
+}
+
+.dark-mode 
+._mode
+.error {
+    color: #00CCCC;
+}
+
+/* GLAVNE BOJE
+#15292B - Tamno plavo zelena    +
+#192734 - Tamno plava siva  +
+#212121 - Tamno siva    +
+#212124 - Tamno siva s nijansom plave   +
+#22303C - Tamno siva plava  +
+#404040 - Srednje tamno siva    +
+*/
+
+/* AKCENT BOJE
+#0A0A0A - Akcent boja: #CC9900 (Tamno žuta) +
+#161618 - Akcent boja: #663399 (Tamno ljubičasta)   +
+#212121 - Akcent boja: #6600CC (Tamno ljubičasta)   +
+#22303C - Akcent boja: #009999 (Tamno cijan)    +
+#242526 - Akcent boja: #FF3399 (Tamno roza) +
+#3A3B3C - Akcent boja: #0099FF (Tamno cijan)    +
+#404040 - Akcent boja: #FF0066 (Tamno roza) +
+*/

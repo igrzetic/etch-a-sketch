@@ -1,9 +1,10 @@
 function populateBoard(size) {
   let board = document.querySelector(".board");
-  let squares = board.querySelectorAll("div");
-  squares.forEach((div) => div.remove());
+
   board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
   board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
+  board.style.borderRadius = "20px";
+  board.style.boxShadow = "inset 0 0 7.5px rgba(0, 0, 0, 0.5)";
 
   let amount = size * size;
   for (let i = 0; i < amount; i++) {
@@ -62,8 +63,32 @@ function clearBoard() {
 // FUNKCIJA KADA KLIKNEM NA BODY DA MI PRESTANE CRTATI
 let click = true;
 
-document.querySelector("body").addEventListener("click", (e) => {
+document.querySelector(".board").addEventListener("click", (e) => {
   if (e.target.tagName != "BUTTON") {
     click = !click;
+    if (click) {
+        document.querySelector('.mode').textContent = "Mode: Coloring";
+    } else {
+        document.querySelector('.mode').textContent = "Mode: Not Coloring";
+    }
   }
+});
+
+// DARK MODE
+const checkbox = document.getElementById('darkMode');
+
+checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        document.querySelector('body').classList.add('dark-mode');
+        document.querySelector('body').style.backgroundColor = '#212121';
+        document.querySelector('.mode').style.color = '#00CCCC';
+        document.querySelector('.error').style.color = '#00CCCC';
+        console.log("Checked")
+    } else {
+        document.querySelector('body').classList.remove('dark-mode');
+        document.querySelector('body').style.backgroundColor = '#e7e7e7';
+        document.querySelector('.mode').style.color = 'white';
+        document.querySelector('.error').style.color = 'white';
+        console.log("Not Checked")
+    }
 });
